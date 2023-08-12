@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push lahcenaghouar/docker_cicd_public/dp-alpine:latest'
+        sh 'docker push lahcenaghouar/dp-alpine:latest'
       }
     }
   }
