@@ -12,6 +12,11 @@ pipeline {
         sh 'docker build -t darinpope/dp-alpine:latest .'
       }
     }
+    stage('Ajout du tag') {
+      steps {
+        sh 'docker tag darinpope/dp-alpine:latest  lahcenaghouar/docker_cicd_1:latest '
+      }
+    }
     stage('Login') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
@@ -19,7 +24,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push lahcenaghouar/darinpope/dp-alpine:latest'
+        sh 'docker push lahcenaghouar/docker_cicd_1:latest'
       }
     }
   }
