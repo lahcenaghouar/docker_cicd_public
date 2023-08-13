@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push lahcenaghouar/docker_cicd_1:latest'
+        sh 'docker push lahcenaghouar/docker_cicd_1:1.0.0'
       }
     }
   }
