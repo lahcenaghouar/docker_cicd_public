@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Ajout du tag') {
       steps {
-        sh 'docker tag darinpope/dp-alpine:latest  lahcenaghouar/docker_cicd_1:latest '
+        sh 'docker tag darinpope/dp-alpine:latest  lahcenaghouar/docker_cicd_1:1.0.0 '
       }
     }
     stage('Login') {
