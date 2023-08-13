@@ -35,7 +35,8 @@ pipeline {
         remote.user = 'root'
         remote.password = 'rootroot'
         remote.allowAnyHosts = true
-
+ steps {
+   
         stage('Put k8s-spring-boot-deployment.yml onto k8smaster') {
             sshPut remote: remote, from: 'k8s-nginx-deployment.yml', into: '.'
         }
@@ -43,6 +44,7 @@ pipeline {
         stage('Deploy spring boot') {
           sshCommand remote: remote, command: "kubectl apply -f k8s-nginx-deployment.yml"
         }
+    }
     }
   }
   post {
