@@ -9,12 +9,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t darinpope/dp-alpine:latest .'
+        sh 'docker build -t nginx:latest .'
       }
     }
     stage('Ajout du tag') {
       steps {
-        sh 'docker tag darinpope/dp-alpine:latest  lahcenaghouar/docker_cicd_1:1.0.0 '
+        sh 'docker tag nginx:latest  lahcenaghouar/nginx:1.0.0 '
       }
     }
     stage('Login') {
@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Push image to docker hub') {
       steps {
-        sh 'docker push lahcenaghouar/docker_cicd_1:1.0.0'
+        sh 'docker push lahcenaghouar/nginx:1.0.0'
       }
     }
   }
