@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Ajout du tag') {
       steps {
-        sh 'docker tag nginx:latest  lahcenaghouar/nginx:1.0.0 '
+        sh 'docker tag nginx:latest  lahcenaghouar/nginx:1.0.1 '
       }
     }
     stage('Login') {
@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Push image to docker hub') {
       steps {
-        sh 'docker push lahcenaghouar/nginx:1.0.0'
+        sh 'docker push lahcenaghouar/nginx:1.0.1'
       }
     }
   }
