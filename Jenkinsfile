@@ -27,15 +27,6 @@ pipeline {
         sh 'docker push lahcenaghouar/nginx:1.0.1'
       }
     }
-
-    stage('SSH Into k8s Server') {
-        def remote = [:]
-        remote.name = 'K8S master'
-        remote.host = '192.168.100.133'
-        remote.user = 'root'
-        remote.password = 'rootroot'
-        remote.allowAnyHosts = true
-    }
   }
   post {
     always {
