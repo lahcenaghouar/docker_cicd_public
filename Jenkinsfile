@@ -33,6 +33,11 @@ pipeline {
         sh 'scp k8s-nginx-deployment.yml index.html  root@192.168.100.133:/root/jenkins/'
       }
     }
+    stage('Deploy on Kubernetes') {
+      steps {
+        sh 'ssh root@192.168.100.133  kubectl apply -f /root/jenkins/k8s-nginx-deployment.yml'
+      }
+    }
   }
   post {
     always {
