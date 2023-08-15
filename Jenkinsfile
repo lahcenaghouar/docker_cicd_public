@@ -38,6 +38,11 @@ pipeline {
         sh 'ssh root@192.168.100.133  kubectl apply -f /root/jenkins/k8s-nginx-deployment.yml'
       }
     }
+     stage('Status of Pods') {
+      steps {
+        sh 'ssh root@192.168.100.133  kubectl get pods -o wide'
+      }
+    }
   }
   post {
     always {
