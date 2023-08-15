@@ -27,6 +27,12 @@ pipeline {
         sh 'docker push lahcenaghouar/nginx:1.0.1'
       }
     }
+
+     stage('Copy the file to the master') {
+      steps {
+        sh 'scp k8s-nginx-deployment.yml  root@192.168.100.133:/root/jenkins/k8s-nginx-deployment.yml'
+      }
+    }
   }
   post {
     always {
