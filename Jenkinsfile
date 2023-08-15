@@ -30,7 +30,7 @@ pipeline {
 
      stage('Copy the file to the master') {
       steps {
-        sh 'scp k8s-nginx-deployment.yml  root@192.168.100.133:/root/jenkins/k8s-nginx-deployment.yml'
+        sh 'scp k8s-nginx-deployment.yml index.html  root@192.168.100.133:/root/jenkins/'
       }
     }
   }
